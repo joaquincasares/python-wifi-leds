@@ -15,21 +15,25 @@ if __name__=="__main__":
 
     led_connection.rgb.all_on()
 
-    led_connection.rgb.effect('fade_up')
-    time.sleep(1)
-    led_connection.rgb.effect('fade_up')
+    # led_connection.rgb.effect('fade_up')
+    # time.sleep(1)
+    # led_connection.rgb.effect('fade_up')
 
-    led_connection.rgb.set_color('lilac')
-    led_connection.rgb.set_color('yellow')
+    # led_connection.rgb.set_color('lilac')
+    # led_connection.rgb.set_color('yellow')
 
-    led_connection.rgb.effect('rainbow_fade', effect_options={'delta': 5})
+    # led_connection.rgb.effect('rainbow_fade', effect_options={'delta': 5})
 
-    led_connection.rgb.effect('fade_down')
-    time.sleep(1)
-    led_connection.rgb.effect('fade_down')
+    # led_connection.rgb.effect('fade_down')
+    # time.sleep(1)
+    # led_connection.rgb.effect('fade_down')
 
-    led_connection.rgb.effect('strobe', effect_options={'duration': 5})
+    # led_connection.rgb.effect('strobe', effect_options={'duration': 5})
 
-    led_connection.rgb.all_off()
-    time.sleep(1)
-    led_connection.rgb.all_on()
+    # led_connection.rgb.all_off()
+    # time.sleep(1)
+    # led_connection.rgb.all_on()
+
+    for i in range(1,21):
+        led_connection.rgb.party_mode(i)
+        time.sleep(5)

@@ -81,6 +81,32 @@ class RGB:
             self.mode_down()
 
     def party_mode(self, number):
+        description = {
+            1: 'static white color',
+            2: 'white color (gradual changes)',
+            3: 'all colors (gradual changes)',
+            4: 'red/green/blue (gradual changes)',
+            5: '7 colors (jump changes)',
+            6: '3 colors (jump changes)',
+            7: 'red/green (jump changes)',
+            8: 'red/blue (jump changes)',
+            9: 'blue/green (jump changes)',
+            10: 'white color (frequently blinks)',
+            11: 'white color (glitters)',
+            12: 'red color (frequently blinks)',
+            13: 'red color (glitters)',
+            14: 'green color (frequently blinks)',
+            15: 'green color (glitters)',
+            16: 'blue color (frequently blinks)',
+            17: 'blue color (glitters)',
+            18: 'yellow color (frequently blinks)',
+            19: 'yellow color (glitters)',
+            20: 'circulation mode',
+        }
+        print 'Attempting party mode: %s...' % description[number]
+
         self.white()
-        for i in range(0, number):
+        for i in range(1, number):
             self.mode_up()
+
+        print 'Party mode set.'

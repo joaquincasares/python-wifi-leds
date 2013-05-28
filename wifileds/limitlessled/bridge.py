@@ -10,12 +10,12 @@ from . import white
 class Bridge:
     def send_command(self, part1, part2=0x00):
         message = bytearray([part1, part2, 0x55])
-        for i in range(0, 4):
+        for i in range(0, 3):
             self.sock.sendto(message, (self.address, self.port))
             self.short_pause()
 
     def short_pause(self):
-        time.sleep(.015)
+        time.sleep(.025)
 
     def long_pause(self):
         time.sleep(.1)
