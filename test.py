@@ -30,7 +30,8 @@ if __name__=="__main__":
 
     # led_connection.rgb.effect('strobe', effect_options={'duration': 5})
 
-    led_connection.rgb.effect('police_flashers')
+    led_connection.rgb.effect('pulsating_swells', effect_options={'duration': 50})
+    # led_connection.rgb.effect('police_flashers')
 
     # led_connection.rgb.all_off()
     # time.sleep(1)

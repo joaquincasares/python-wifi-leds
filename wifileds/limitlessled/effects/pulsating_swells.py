@@ -1,6 +1,7 @@
+import random
 import time
 
-def run(bridge, duration=10, fade_up_delay=0, fade_down_delay=1, on_duration=1, off_duration=0,
+def run(bridge, duration=10, fade_up_delay=0, fade_down_delay=0.01, on_duration=1, off_duration=0,
         colors=['yellow'], color_changes=True):
     '''An effect that simulates yellow factory warning flashers.
 
@@ -45,7 +46,7 @@ def run(bridge, duration=10, fade_up_delay=0, fade_down_delay=1, on_duration=1, 
 
         # Swell lights to max brightness
         for i in range(0, 9):
-            self.brightness_up()
+            bridge.brightness_up()
             time.sleep(fade_up_delay)
 
         # Check if effect duration has past
@@ -56,5 +57,5 @@ def run(bridge, duration=10, fade_up_delay=0, fade_down_delay=1, on_duration=1, 
 
         # Swell lights to min brightness
         for i in range(0, 9):
-            self.brightness_down()
+            bridge.brightness_down()
             time.sleep(fade_down_delay)
