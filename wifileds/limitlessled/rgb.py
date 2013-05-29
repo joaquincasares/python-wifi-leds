@@ -1,3 +1,4 @@
+import logging
 import sys
 
 class RGB:
@@ -66,15 +67,26 @@ class RGB:
     def set_color_hex(self, color_value):
         self.parent.send_command(0x20, color_value)
 
+    def set_color_wheel(self, percentage):
+        if percentage < 0 or percentage > 1:
+            raise ValueError('Wheel percentage should be > 0 and < 1.')
+        self.parent.send_command(0x20, chr(int(float(255) * percentage)))
+
     def max_brightness(self):
         for i in range(0, 9):
             self.brightness_up()
-            self.parent.short_pause()
 
     def min_brightness(self):
         for i in range(0, 9):
             self.brightness_down()
-            self.parent.short_pause()
+
+    def max_speed(self):
+        for i in range(0, 9):
+            self.speed_up()
+
+    def min_speed(self):
+        for i in range(0, 9):
+            self.speed_down()
 
     def white(self):
         for i in range(0, 20):

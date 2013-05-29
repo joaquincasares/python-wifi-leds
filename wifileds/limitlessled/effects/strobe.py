@@ -1,14 +1,19 @@
 import time
 
-def run(bulb, delay=0.0, duration=10):
+def run(bulb, duration=10, on_duration=0, off_duration=0):
+    # Keep track of time in effect
     start_time = time.time()
-    while True:
-        bulb.all_off()
-        bulb.short_pause()
-        bulb.all_on()
-        bulb.short_pause()
 
+    # Main loop
+    while True:
+        # Flash the lights off, then on
+        bulb.all_off()
+        time.sleep(off_duration)
+        bulb.all_on()
+
+        # Check if effect duration has past
         if time.time() - start_time > duration:
             break
 
-        time.sleep(delay)
+        # Leave the bulb on white
+        time.sleep(on_duration)
