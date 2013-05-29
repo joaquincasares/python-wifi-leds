@@ -1,7 +1,7 @@
 import random
 import time
 
-def run(bridge, duration=10, max_on_duration=1, max_off_duration=1, max_stutter=4,
+def run(bridge, duration=10, max_on_duration=0, max_off_duration=0, max_stutter=4,
         colors=['red', 'royal_blue', 'white']):
     '''An effect that simulates United States police flashers.
 
@@ -44,6 +44,7 @@ def run(bridge, duration=10, max_on_duration=1, max_off_duration=1, max_stutter=
                 time.sleep(random.random() * max_off_duration)
 
                 bridge.all_on()
+                i += 1
 
         # Possibly repeat the color changing effect
         this_stutter_count = random.random() * max_stutter
@@ -62,6 +63,7 @@ def run(bridge, duration=10, max_on_duration=1, max_off_duration=1, max_stutter=
 
             # Keep lights off for random length of time
             time.sleep(random.random() * max_on_duration)
+            i += 1
 
         # Check if effect duration has past
         if time.time() - start_time > duration:
