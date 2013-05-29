@@ -3,6 +3,17 @@ import time
 
 def run(bridge, duration=10, max_on_duration=1, max_off_duration=1, max_stutter=4,
         colors=['red', 'royal_blue', 'white']):
+    '''An effect that simulates United States police flashers.
+
+    Keyword arguments:
+    bridge -- the bridge that will be controlled (required)
+    duration -- length of time the effect will last (default 10)
+    max_on_duration -- max length of time possible for the lights to remain in the on position (default 1)
+    max_off_duration -- max length of time possible for the lights to remain in the off position (default 1)
+    max_stutter -- max amount of times that an event will loop (default 4)
+    colors -- list of possible colors to choose from (default: ['red', 'royal_blue', 'white']])
+              `None`: Random selection of colors
+    '''
 
     # Keep track of time in effect
     start_time = time.time()

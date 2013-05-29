@@ -2,18 +2,24 @@ import random
 import time
 
 def run(bridge, duration=10, on_duration=1, off_duration=1,
-        colors=[]):
+        colors=None):
     '''A colorful strobe light effect.
 
     Keyword arguments:
-    bridge -- the bridge that will be controlled.
+    bridge -- the bridge that will be controlled (required)
+    duration -- length of time the effect will last (default 10)
+    on_duration -- length of time the lights remain in the on position (default 1)
+    off_duration -- length of time the lights remain in the off position (default 1)
+    colors -- list of possible colors to choose from (default: None)
+              `None`: Random selection of colors
     '''
     # Keep track of time in effect
     start_time = time.time()
 
-    # Set white to be easily accessible via mode_down()
-    if 'white' in colors:
-        bridge.white()
+    if colors:
+        # Set white to be easily accessible via mode_down()
+        if 'white' in colors:
+            bridge.white()
 
     # Main loop
     while True:

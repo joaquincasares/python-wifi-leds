@@ -1,6 +1,13 @@
 import time
 
 def run(bridge, delay=0):
+    '''Fade down light at a specified delay.
+
+    Keyword arguments:
+    bridge -- the bridge that will be controlled (required)
+    delay -- delay between fade down commands (default 0)
+    '''
+
     # Number of steps between min and max
     max_loop = 9
 

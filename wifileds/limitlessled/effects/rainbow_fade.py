@@ -1,6 +1,16 @@
 import time
 
 def run(bridge, delta=1, delay=0):
+    '''Fade down the light at a specified delay.
+
+    Keyword arguments:
+    bridge -- the bridge that will be controlled (required)
+    delta -- amount of change between colors (default 1)
+             Requirement: delta > 1
+    delay -- delay between fade commands (default 0)
+    '''
+
+
     # Ensure we do not get an infinite loop
     delta = int(delta)
     if delta == 0:
