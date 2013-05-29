@@ -1,7 +1,7 @@
 import random
 import time
 
-def run(bulb, duration=10, max_on_duration=1, max_off_duration=1, max_stutter=4,
+def run(bridge, duration=10, max_on_duration=1, max_off_duration=1, max_stutter=4,
         colors=['red', 'royal_blue', 'white']):
 
     # Keep track of time in effect
@@ -10,13 +10,13 @@ def run(bulb, duration=10, max_on_duration=1, max_off_duration=1, max_stutter=4,
     if colors:
         # Set white to be easily accessible via mode_down()
         if 'white' in colors:
-            bulb.white()
+            bridge.white()
 
         # Choose a color in colors to properly set max_brightness
         for color in colors:
             if color != 'white':
-                bulb.set_color(color)
-                bulb.max_brightness()
+                bridge.set_color(color)
+                bridge.max_brightness()
                 break
 
     # Main loop
@@ -27,12 +27,12 @@ def run(bulb, duration=10, max_on_duration=1, max_off_duration=1, max_stutter=4,
             this_stutter_count = random.random() * max_stutter
             i = 0
             while i < this_stutter_count:
-                bulb.all_off()
+                bridge.all_off()
 
                 # Keep lights off for random length of time
                 time.sleep(random.random() * max_off_duration)
 
-                bulb.all_on()
+                bridge.all_on()
 
         # Possibly repeat the color changing effect
         this_stutter_count = random.random() * max_stutter
@@ -42,12 +42,12 @@ def run(bulb, duration=10, max_on_duration=1, max_off_duration=1, max_stutter=4,
                 # If colors are provided, choose a specified color
                 current_color = colors[int(random.random() * len(colors))]
                 if current_color == 'white':
-                    bulb.mode_down()
+                    bridge.mode_down()
                 else:
-                    bulb.set_color(current_color)
+                    bridge.set_color(current_color)
             else:
                 # If colors are NOT provided, choose a random color
-                bulb.set_color_hex(chr(int(random.random() * 255)))
+                bridge.set_color_hex(chr(int(random.random() * 255)))
 
             # Keep lights off for random length of time
             time.sleep(random.random() * max_on_duration)
