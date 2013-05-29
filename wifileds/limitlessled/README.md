@@ -24,3 +24,9 @@ led_connection.rgb.all_on()
 
 led_connection.white.all_on()
 ```
+
+Effects are run by passing the effect name as the 1st parameter and the effect options as shown:
+
+```.py
+led_connection.rgb.effect('rainbow_fade', effect_options={'delta': 5})
+```
