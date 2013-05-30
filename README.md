@@ -9,9 +9,9 @@ This package currently only contains the API layer for [LimitlessLED bulbs](wifi
 Future products that we're looking forward to include:
 
 * From [LimitlessLED](http://whrl.pl/RdBge7):
-    * 6W (600 lm) LimitlessLED Dual White Downlight (June 2013) ~$37 USD
+    * 6W (600 lm) LimitlessLED Dual White 2.4Ghz/RF Downlight (June 2013) ~$37 USD
     * 12W (1100 lm) LimitlessLED Dual White 2.4Ghz/RF Downlight (June 2013) ~$47 USD
-    * 8W LimitlessLED Dual White 2.4Ghz/RF Bulbs (August 2013) ~$17 USD
+    * 8W LimitlessLED Dual White Bulbs (August 2013) ~$17 USD
     * Brighter LimitlessLED RGB+White 2.4Ghz/RF Bulbs (October 2013) ~$19 USD
     * New LimitlessLED WiFi Bridge (unlimited groups and individual bulb control) (February 2014) ~$17 USD
     * Glass on Black 2.4Ghz/RF In-Wall Switches (October 2014) ~$9 USD
