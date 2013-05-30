@@ -57,7 +57,7 @@ if __name__=="__main__":
     print 'Pulsating yellow factory flashers. Colors can be customized or fully random...'
     led_connection.rgb.effect('pulsating_swells', effect_options={'duration': 15})
 
-    print 'Rainbow fade. Speed of change and quickness can be customized...'
+    print 'Rainbow fade. Speed of change and difference of change can be customized...'
     led_connection.rgb.effect('rainbow_fade', effect_options={'delta': 5})
 
     print 'Strobe effect based on the previously set color...'
@@ -79,27 +79,33 @@ if __name__=="__main__":
     led_connection.white.effect('fade_down')
     led_connection.white.effect('fade_up')
     led_connection.white.effect('fade_down')
+    time.sleep(1)
+
+    print 'Turn off all lights...'
+    led_connection.white.all_off()
+    time.sleep(1)
 
     print 'Turn on one zone at a time...'
-    led_connection.white.all_off()
     for i in range(1, 5):
         led_connection.white.zone_on(i)
+        time.sleep(1)
+    time.sleep(1)
 
     print 'Make all lights nightlights...'
     led_connection.white.nightlight_all()
-    time.sleep(1)
+    time.sleep(2)
 
     print 'Get all lights to full brightness...'
     led_connection.white.full_all()
-    time.sleep(1)
+    time.sleep(2)
 
     print 'Max cool...'
     led_connection.white.max_cool()
-    time.sleep(1)
+    time.sleep(2)
 
     print 'Max warm...'
     led_connection.white.max_warm()
-    time.sleep(1)
+    time.sleep(2)
 
     print 'Strobe effect...'
     led_connection.white.effect('strobe')
