@@ -25,3 +25,7 @@ Feel free to add to the list of upcoming products and/or manufactures.
 ## Usage
 
 See [tests](tests) for example scripts for each supported system.
+
+## Contribution
+
+Feel free to contribute code fixes, new effects, or even new WiFi LED systems via GitHub pull requests.
