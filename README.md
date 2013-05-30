@@ -17,3 +17,7 @@ Future products that we're looking forward to include:
     * Glass on Black 2.4Ghz/RF In-Wall Switches (October 2014) ~$9 USD
 
 Feel free to add to the list of upcoming products and/or manufactures.
+
+## Usage
+
+See [tests](tests) for example scripts for each supported system.
