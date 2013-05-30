@@ -81,3 +81,7 @@ Notes:
 * White Bulbs:
     * Within 3 seconds, press the `zone_on` button 5 times. The light should blink 6 times.
 * Repeat steps for each bulb that needs to be cleared.
+
+# Official Documentation
+
+Since finding official documentation is a bit more difficult than it should be, I've uploaded it [here](http://db.tt/1fsdS6GP).
