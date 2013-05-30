@@ -1,13 +1,13 @@
 These lamps are manufactured in China under the following brand names, depending on country sold:
 
-* Limitless LED
+* [LimitlessLED](http://www.limitlessled.com/)
+* [EasyBulb](http://www.easybulb.com/)
+* [AppLight](http://www.applight.nl/)
+* [AppLamp](http://www.applamp.nl/)
+* MiLight
+* LEDme
 * dekolight
 * iLight
-* applight
-* applamp
-* LEDme
-* EasyBulb
-* MiLight
 
 # Usage
 
@@ -30,3 +30,5 @@ Effects are run by passing the effect name as the 1st parameter and the effect o
 ```.py
 led_connection.rgb.effect('rainbow_fade', effect_options={'delta': 5})
 ```
+
+See `tests/limitless.py` for more examples.

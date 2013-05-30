@@ -68,4 +68,40 @@ if __name__=="__main__":
     time.sleep(1)
     led_connection.rgb.all_on()
 
+    print '=' * 20
+    print 'Now focusing on the white bulbs...\n'
+
+    print 'Turn on all color lights...'
+    led_connection.white.all_on()
+
+    print 'Wave pattern with the fading of the lights...'
+    led_connection.white.effect('fade_up')
+    led_connection.white.effect('fade_down')
+    led_connection.white.effect('fade_up')
+    led_connection.white.effect('fade_down')
+
+    print 'Turn on one zone at a time...'
+    led_connection.white.all_off()
+    for i in range(1, 5):
+        led_connection.white.zone_on(i)
+
+    print 'Make all lights nightlights...'
+    led_connection.white.nightlight_all()
+    time.sleep(1)
+
+    print 'Get all lights to full brightness...'
+    led_connection.white.full_all()
+    time.sleep(1)
+
+    print 'Max cool...'
+    led_connection.white.max_cool()
+    time.sleep(1)
+
+    print 'Max warm...'
+    led_connection.white.max_warm()
+    time.sleep(1)
+
+    print 'Strobe effect...'
+    led_connection.white.effect('strobe')
+
     print 'Done.'

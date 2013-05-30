@@ -3,7 +3,7 @@ import sys
 
 class White:
     def effect(self, effect_name, args=[], effect_options={}):
-        effect = sys.modules['wifileds.effects.%s' % effect_name]
+        effect = sys.modules['wifileds.limitlessled.effects.%s' % effect_name]
         try:
             effect.run(self, *args, **effect_options)
         except AttributeError as e:
