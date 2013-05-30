@@ -18,6 +18,10 @@ Future products that we're looking forward to include:
 
 Feel free to add to the list of upcoming products and/or manufactures.
 
+## Installation
+
+`pip install wifileds`
+
 ## Usage
 
 See [tests](tests) for example scripts for each supported system.
