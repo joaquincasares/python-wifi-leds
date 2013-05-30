@@ -1,15 +1,15 @@
 import random
 import time
 
-def run(bridge, duration=10, on_duration=1, off_duration=1,
+def run(bridge, duration=15, on_duration=0.3, off_duration=0.01,
         colors=None):
     '''A colorful strobe light effect.
 
     Keyword arguments:
     bridge -- the bridge that will be controlled (required)
-    duration -- length of time the effect will last (default 10)
-    on_duration -- length of time the lights remain in the on position (default 1)
-    off_duration -- length of time the lights remain in the off position (default 1)
+    duration -- length of time the effect will last (default 15)
+    on_duration -- length of time the lights remain in the on position (default 0.3)
+    off_duration -- length of time the lights remain in the off position (default 0.01)
     colors -- list of possible colors to choose from (default: None)
               `None`: Random selection of colors
     '''

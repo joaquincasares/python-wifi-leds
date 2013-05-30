@@ -1,15 +1,15 @@
 import random
 import time
 
-def run(bridge, duration=10, max_on_duration=0, max_off_duration=0, max_stutter=4,
+def run(bridge, duration=15, max_on_duration=0, max_off_duration=0.1, max_stutter=4,
         colors=['red', 'royal_blue', 'white']):
     '''An effect that simulates United States police flashers.
 
     Keyword arguments:
     bridge -- the bridge that will be controlled (required)
-    duration -- length of time the effect will last (default 10)
-    max_on_duration -- max length of time possible for the lights to remain in the on position (default 1)
-    max_off_duration -- max length of time possible for the lights to remain in the off position (default 1)
+    duration -- length of time the effect will last (default 15)
+    max_on_duration -- max length of time possible for the lights to remain in the on position (default 0)
+    max_off_duration -- max length of time possible for the lights to remain in the off position (default 0.1)
     max_stutter -- max amount of times that an event will loop (default 4)
     colors -- list of possible colors to choose from (default: ['red', 'royal_blue', 'white']])
               `None`: Random selection of colors

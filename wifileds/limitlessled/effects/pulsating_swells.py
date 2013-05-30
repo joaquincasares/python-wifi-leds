@@ -1,16 +1,16 @@
 import random
 import time
 
-def run(bridge, duration=10, fade_up_delay=0, fade_down_delay=0.01, on_duration=1, off_duration=0,
+def run(bridge, duration=15, fade_up_delay=0, fade_down_delay=0.01, on_duration=0.5, off_duration=0,
         colors=['yellow'], color_changes=True):
     '''An effect that simulates yellow factory warning flashers.
 
     Keyword arguments:
     bridge -- the bridge that will be controlled (required)
-    duration -- length of time the effect will last (default 10)
+    duration -- length of time the effect will last (default 15)
     fade_up_delay -- delay between fade up commands (default 0)
-    fade_down_delay -- delay between fade down commands (default 1)
-    on_duration -- length of time for the lights to remain in the on position (default 1)
+    fade_down_delay -- delay between fade down commands (default 0.01)
+    on_duration -- length of time for the lights to remain in the on position (default 0.5)
     off_duration -- length of time for the lights to remain in the off position (default 0)
     colors -- list of possible colors to choose from (default: ['yellow']])
               `None`: Random selection of colors
