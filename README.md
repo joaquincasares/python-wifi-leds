@@ -7,8 +7,8 @@ This package currently only contains the API layer for [LimitlessLED bulbs](wifi
 [Philips hue](http://www.meethue.com/) may be looked at into the future, but is currently a bit expensive for a full house system. Other Python APIs do exist and are linked [here](https://github.com/Q42/hue-libs#python). If any one feels like they want to merge projects, feel free to reach me via GitHub.
 
 Future products that we're looking forward to include:
-From [LimitlessLED](http://whrl.pl/RdBge7):
 
+* From [LimitlessLED](http://whrl.pl/RdBge7):
     * 8W LimitlessLED Dual White Bulbs (August 2013) ~$17 USD
     * Brighter LimitlessLED RGB+White Bulbs (October 2013) ~$19 USD
     * New LimitlessLED WiFi Bridge (unlimited groups and individual bulb control) (February 2014) ~$17 USD
