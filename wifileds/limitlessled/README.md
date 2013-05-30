@@ -1,4 +1,4 @@
-These lamps are manufactured in China under the following brand names, depending on country sold:
+These lamps are manufactured in China under the following [brand names](http://board.homeseer.com/showpost.php?p=1063584&postcount=1), depending on country sold:
 
 * [LimitlessLED](http://www.limitlessled.com/)
 * [EasyBulb](http://www.easybulb.com/)
