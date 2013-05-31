@@ -28,14 +28,9 @@ if __name__=="__main__":
     del options['bulbs']
 
     if bulbs == 'rgb':
-        led_connection.rgb.all_on()
         led_connection.rgb.effect('fade_down', effect_options=options)
     elif bulbs == 'white':
-        led_connection.white.all_on()
         led_connection.white.effect('fade_down', effect_options=options)
     elif bulbs == 'all':
-        led_connection.rgb.all_on()
         led_connection.rgb.effect('fade_down', effect_options=options)
-
-        led_connection.white.all_on()
         led_connection.white.effect('fade_down', effect_options=options)
