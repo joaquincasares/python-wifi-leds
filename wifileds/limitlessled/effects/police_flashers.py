@@ -22,6 +22,7 @@ def run(bridge, duration=15, max_on_duration=0, max_off_duration=0.1, max_stutte
         # Set white to be easily accessible via mode_down()
         if 'white' in colors:
             bridge.white()
+            bridge.max_brightness()
 
         # Choose a color in colors to properly set max_brightness
         for color in colors:
