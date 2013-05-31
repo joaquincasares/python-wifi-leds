@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+import ast
+import time
+import sys
+
+from optparse import OptionParser, OptionGroup
+
+import wifileds
+
+if __name__=="__main__":
+    parser = OptionParser()
+    parser.add_option('-a', '--address', default='192.168.1.100', help='wifi block ip address')
+    parser.add_option('-p', '--port', type='int', default=50000, help='wifi block port address')
+    (options, args) = parser.parse_args()
+
+    if not args:
+        sys.exit('Missing parameter:\n\tMust include a number in the range 1-255')
+
+    if not args[0].isdigit():
+        sys.exit('Invalid parameter:\n\tMust include a number in the range 1-255')
+
+    led_connection = wifileds.limitlessled.connect(options.address, options.port)
+    led_connection.rgb.all_on()
+    led_connection.rgb.set_color_hex(chr(int(args[0])))

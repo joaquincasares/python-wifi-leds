@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+
+import ast
+import time
+
+from optparse import OptionParser, OptionGroup
+
+import wifileds
+
+if __name__=="__main__":
+    parser = OptionParser()
+    parser.add_option('-a', '--address', default='192.168.1.100', help='wifi block ip address')
+    parser.add_option('-p', '--port', type='int', default=50000, help='wifi block port address')
+    parser.add_option('-b', '--bulbs', choices=['white', 'rgb', 'all'], default='all', help='choose the lights to run this effect')
+
+    (options, args) = parser.parse_args()
+
+    led_connection = wifileds.limitlessled.connect(options.address, options.port)
+    bulbs = options.bulbs
+
+    options = ast.literal_eval(str(options))
+    del options['address']
+    del options['port']
+    del options['bulbs']
+
+    if bulbs == 'rgb':
+        led_connection.rgb.all_on()
+    elif bulbs == 'white':
+        led_connection.white.all_on()
+    elif bulbs == 'all':
+        led_connection.rgb.all_on()
+        led_connection.white.all_on()
