@@ -9,14 +9,14 @@ import wifileds
 
 if __name__=="__main__":
     parser = OptionParser()
-    parser.add_option('-a', '--address', default='192.168.1.100', help='wifi block ip address')
-    parser.add_option('-p', '--port', type='int', default=50000, help='wifi block port address')
+    parser.add_option('-a', '--address', default='192.168.1.100', help='wifi block ip address [default: %default]')
+    parser.add_option('-p', '--port', type='int', default=50000, help='wifi block port address [default: %default]')
 
     group = OptionGroup(parser, 'Effect options:')
-    group.add_option('--duration', type='float', default=86400, help='length of time the effect will last')
-    group.add_option('--on-duration', type='float', default=0.3, help='length of time the lights remain in the on position')
-    group.add_option('--off-duration', type='float', default=0.01, help='length of time the lights remain in the off position')
-    group.add_option('--colors', default=None, help='list of possible colors to choose from. `None`: Random selection of colors.')
+    group.add_option('--duration', type='float', default=86400, help='length of time the effect will last [default: %default]')
+    group.add_option('--on-duration', type='float', default=0.3, help='length of time the lights remain in the on position [default: %default]')
+    group.add_option('--off-duration', type='float', default=0.01, help='length of time the lights remain in the off position [default: %default]')
+    group.add_option('--colors', default=None, help='list of possible colors to choose from. `None`: Random selection of colors. [default: %default]')
     parser.add_option_group(group)
 
     (options, args) = parser.parse_args()
@@ -25,7 +25,7 @@ if __name__=="__main__":
     led_connection.rgb.all_on()
 
     options = ast.literal_eval(str(options))
-    options['colors'] = options['colors'].split(',')
+    options['colors'] = options['colors'].split(',') if options['colors'] else None
     del options['address']
     del options['port']
 

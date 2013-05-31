@@ -9,15 +9,15 @@ import wifileds
 
 if __name__=="__main__":
     parser = OptionParser()
-    parser.add_option('-a', '--address', default='192.168.1.100', help='wifi block ip address')
-    parser.add_option('-p', '--port', type='int', default=50000, help='wifi block port address')
+    parser.add_option('-a', '--address', default='192.168.1.100', help='wifi block ip address [default: %default]')
+    parser.add_option('-p', '--port', type='int', default=50000, help='wifi block port address [default: %default]')
 
     group = OptionGroup(parser, 'Effect options:')
-    group.add_option('--duration', type='float', default=86400, help='length of time the effect will last')
-    group.add_option('--max-on-duration', type='float', default=0, help='max length of time possible for the lights to remain in the on position')
-    group.add_option('--max-off-duration', type='float', default=0.1, help='max length of time possible for the lights to remain in the off position')
-    group.add_option('--max-stutter', type='int', default=4, help='max amount of times that an event will loop')
-    group.add_option('--colors', default='red,royal_blue,white', help='list of possible colors to choose from. `None`: Random selection of colors.')
+    group.add_option('--duration', type='float', default=86400, help='length of time the effect will last [default: %default]')
+    group.add_option('--max-on-duration', type='float', default=0, help='max length of time possible for the lights to remain in the on position [default: %default]')
+    group.add_option('--max-off-duration', type='float', default=0.1, help='max length of time possible for the lights to remain in the off position [default: %default]')
+    group.add_option('--max-stutter', type='int', default=4, help='max amount of times that an event will loop [default: %default]')
+    group.add_option('--colors', default='red,royal_blue,white', help='list of possible colors to choose from. `None`: Random selection of colors. [default: %default]')
     parser.add_option_group(group)
 
     (options, args) = parser.parse_args()

@@ -9,12 +9,12 @@ import wifileds
 
 if __name__=="__main__":
     parser = OptionParser()
-    parser.add_option('-a', '--address', default='192.168.1.100', help='wifi block ip address')
-    parser.add_option('-p', '--port', type='int', default=50000, help='wifi block port address')
-    parser.add_option('-b', '--bulbs', choices=['white', 'rgb', 'all'], default='all', help='choose the lights to run this effect')
+    parser.add_option('-a', '--address', default='192.168.1.100', help='wifi block ip address [default: %default]')
+    parser.add_option('-p', '--port', type='int', default=50000, help='wifi block port address [default: %default]')
+    parser.add_option('-b', '--bulbs', choices=['white', 'rgb', 'all'], default='all', help='choose the lights to run this effect [default: %default]')
 
     group = OptionGroup(parser, 'Effect options:')
-    group.add_option('--delay', type='float', default=0, help='delay between fade down commands')
+    group.add_option('--delay', type='float', default=0, help='delay between fade down commands [default: %default]')
     parser.add_option_group(group)
 
     (options, args) = parser.parse_args()
