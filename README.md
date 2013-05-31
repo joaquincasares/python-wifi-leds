@@ -18,11 +18,27 @@ Future products that we're looking forward to include:
 
 Feel free to add to the list of upcoming products and/or manufactures.
 
-## Installation
+## Binary Examples
 
-`pip install wifileds`
+See [bin](bin) for example executables for each supported system.
 
-## Usage
+## Module Installation
+
+Install the Python module by running:
+
+```bash
+pip install wifileds
+```
+
+Then import the module into your code using:
+
+```.py
+import wifileds
+```
+
+For each submodule's specific usage, read the README.md in the [respective directory](wifileds).
+
+## Coding Examples
 
 See [tests](tests) for example scripts for each supported system.
 
