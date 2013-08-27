@@ -15,11 +15,17 @@ class Bridge:
         # Send message multiple times to simulate a button press
         for i in range(0, 3):
             try:
-                self.sock.sendto(message, (self.address, self.port))
+                if self.protocol == 'udp':
+                    self.sock.sendto(message, (self.address, self.port))
+                elif self.protocol == 'tcp':
+                    self.sock.send(message)
+
+                    # Catch and discard the response
+                    self.sock.recv(1024)
             except Exception as e:
                 # Reconnect on failures
-                self.sock = socket.socket(socket.AF_INET,    # Internet
-                                          socket.SOCK_DGRAM) # UDP
+                self.create_connection()
+
                 logging.error(e)
 
             # Keep the messages from flooding the device
@@ -33,17 +39,29 @@ class Bridge:
         # Useful for nightlight features that require a long press
         time.sleep(self.long_pause_duration)
 
+    def create_connection(self):
+        if self.protocol == 'udp':
+            self.sock = socket.socket(socket.AF_INET, # Internet
+                                      socket.SOCK_DGRAM) # UDP
+        elif self.protocol == 'tcp':
+            self.sock = socket.socket(socket.AF_INET, # Internet
+                                      socket.SOCK_STREAM) # TCP
+            self.sock.connect((self.address, self.port))
+        else:
+            raise TypeError('Protocol "%s" is not a known protocol.' % self.protocol)
+
     def __init__(self, address='192.168.1.100', port=50000,
                  short_pause_duration=0.025,
-                 long_pause_duration=0.1):
+                 long_pause_duration=0.1,
+                 protocol='udp'):
 
         self.address = address
         self.port = port
         self.short_pause_duration = short_pause_duration
         self.long_pause_duration = long_pause_duration
+        self.protocol = protocol
 
-        self.sock = socket.socket(socket.AF_INET,    # Internet
-                                  socket.SOCK_DGRAM) # UDP
+        self.create_connection()
 
         self.rgb = rgb.RGB(self)
         self.white = white.White(self)
