@@ -55,7 +55,7 @@ def run(bridge, duration=15, max_on_duration=0, max_off_duration=0.1, max_stutte
                 # If colors are provided, choose a specified color
                 current_color = colors[int(random.random() * len(colors))]
                 if current_color == 'white':
-                    bridge.mode_down()
+                    bridge.white()
                 else:
                     bridge.set_color(current_color)
             else:

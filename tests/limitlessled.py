@@ -111,4 +111,83 @@ if __name__=="__main__":
     print 'Strobe effect...'
     led_connection.white.effect('strobe')
 
+    print 'Now focusing on the rgbw bulbs...\n'
+
+    print 'Turn on all rgbw lights...'
+    led_connection.rgbw.all_on()
+    led_connection.rgbw.white()
+
+    print 'Turn off one zone at a time...'
+    for i in range(1, 5):
+        led_connection.rgbw.zone_off(i)
+        time.sleep(1)
+    time.sleep(1)
+
+    print 'Turn on one zone at a time...'
+    for i in range(1, 5):
+        led_connection.rgbw.zone_on(i)
+        time.sleep(1)
+    time.sleep(1)
+
+    print 'Set brightness for different zones'
+    for i in range(1, 5):
+        led_connection.rgbw.set_brightness(i*5, i)
+        time.sleep(1)
+    time.sleep(1)
+
+    print 'Fade lights all the way up...'
+    led_connection.rgbw.effect('fade_up')
+
+    print 'Change to lilac...'
+    led_connection.rgbw.set_color('lilac')
+    time.sleep(1)
+
+    print 'Change to yellow...'
+    led_connection.rgbw.set_color('yellow')
+    time.sleep(1)
+
+    colors = ['baby_blue', 'mint', 'orange', 'lavendar']
+    print 'Set color for different zones'
+    for i in range(1, 5):
+        led_connection.rgbw.set_color(colors[i-1], i)
+        time.sleep(1)
+    time.sleep(1)
+
+    print 'Set white one zone at a time'
+    for i in range(1, 5):
+        led_connection.rgbw.white(i)
+        time.sleep(1)
+    time.sleep(1)
+
+    print 'Fade lights all the way down...'
+    led_connection.rgbw.effect('fade_down')
+
+    print 'Return to full brightness...'
+    led_connection.rgbw.effect('fade_up')
+
+    print 'Colorful strobe effect. Can be customized to select only certain colors...'
+    led_connection.rgbw.effect('colorful_strobe')
+
+    print 'Wave pattern with the fading of the lights...'
+    led_connection.rgbw.effect('fade_up')
+    led_connection.rgbw.effect('fade_down')
+    led_connection.rgbw.effect('fade_up')
+    led_connection.rgbw.effect('fade_down')
+
+    print 'Police flashers effects. Colors can be customized or fully random...'
+    led_connection.rgbw.effect('police_flashers')
+
+    print 'Pulsating yellow factory flashers. Colors can be customized or fully random...'
+    led_connection.rgbw.effect('pulsating_swells', effect_options={'duration': 15})
+
+    print 'Rainbow fade. Speed of change and difference of change can be customized...'
+    led_connection.rgbw.effect('rainbow_fade', effect_options={'delta': 5})
+
+    print 'Strobe effect based on the previously set color...'
+    led_connection.rgbw.effect('strobe', effect_options={'duration': 5})
+
+    print 'Turn off all lights...'
+    led_connection.rgbw.all_off()
+    time.sleep(1)
+
     print 'Done.'

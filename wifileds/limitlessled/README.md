@@ -23,6 +23,7 @@ Then one can call actions depending on the lights that will be manipulated:
 led_connection.rgb.all_on()
 
 led_connection.white.all_on()
+led_connection.rgbw.all_on()
 ```
 
 Effects are run by passing the effect name as the 1st parameter and the effect options as shown:

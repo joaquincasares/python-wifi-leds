@@ -44,10 +44,16 @@ def run(bridge, duration=15, fade_up_delay=0, fade_down_delay=0.01, on_duration=
                 # If colors are NOT provided, choose a random color
                 bridge.set_color_hex(chr(int(random.random() * 255)))
 
+        
         # Swell lights to max brightness
-        for i in range(0, 9):
-            bridge.brightness_up()
-            time.sleep(fade_up_delay)
+        if hasattr(bridge, 'set_brightness') and callable(getattr(bridge, 'set_brightness')):
+            for i in range(2,28):
+                bridge.set_brightness(i)
+                time.sleep(fade_up_delay)
+        else:
+            for i in range(0, 9):
+                bridge.brightness_up()
+                time.sleep(fade_up_delay)
 
         # Check if effect duration has past
         if time.time() - start_time > duration:
@@ -56,6 +62,11 @@ def run(bridge, duration=15, fade_up_delay=0, fade_down_delay=0.01, on_duration=
         time.sleep(on_duration)
 
         # Swell lights to min brightness
-        for i in range(0, 9):
-            bridge.brightness_down()
-            time.sleep(fade_down_delay)
+        if hasattr(bridge, 'set_brightness') and callable(getattr(bridge, 'set_brightness')):
+            for i in range(2,28):
+                bridge.set_brightness(29-i)
+                time.sleep(fade_down_delay)
+        else:
+            for i in range(0, 9):
+                bridge.brightness_down()
+                time.sleep(fade_down_delay)
