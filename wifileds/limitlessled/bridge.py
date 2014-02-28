@@ -7,6 +7,7 @@ from os.path import dirname
 
 from . import rgb
 from . import white
+from . import rgbw
 
 class Bridge:
     def send_command(self, part1, part2=0x00):
@@ -65,3 +66,4 @@ class Bridge:
 
         self.rgb = rgb.RGB(self)
         self.white = white.White(self)
+        self.rgbw = rgbw.RGBW(self)

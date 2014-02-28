@@ -8,6 +8,12 @@ def run(bridge, delay=0):
     delay -- delay between fade up commands (default 0)
     '''
 
+    if hasattr(bridge, 'set_brightness') and callable(getattr(bridge, 'set_brightness')):
+        for i in range(2,28):
+            bridge.set_brightness(i)
+            time.sleep(delay)
+        return
+
     # Number of steps between min and max
     max_loop = 9
 
