@@ -5,7 +5,7 @@ except:
       from distutils.core import setup
 
 setup(name='wifileds',
-      version='1.0.5',
+      version='1.0.6',
       description='Library for multiple WiFi LED vendors.',
       long_description=open('README.md').read(),
       author='Joaquin Casares',
