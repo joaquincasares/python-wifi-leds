@@ -25,8 +25,13 @@ if __name__=="__main__":
 
     if bulbs == 'rgb':
         led_connection.rgb.all_off()
+    elif bulbs == 'rgbw':
+        led_connection.rgbw.all_off()
     elif bulbs == 'white':
         led_connection.white.all_off()
+    elif bulbs == 'rgbw':
+        led_connection.rgbw.all_off()
     elif bulbs == 'all':
         led_connection.rgb.all_off()
         led_connection.white.all_off()
+        led_connection.rgbw.all_off()
